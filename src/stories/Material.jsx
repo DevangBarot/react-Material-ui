@@ -17,7 +17,7 @@ import SaveIcon from '@material-ui/icons/Save';
         </Button>
  */
 import { makeStyles } from "@material-ui/core";
-import {ThemeProvider,createTheme } from "@material-ui/core/styles";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import { orange } from "@material-ui/core/colors";
 const useStyle = makeStyles({
     root: {
@@ -38,7 +38,7 @@ const theme = createTheme({
         secondary: {
             main: '#C6DAF6'
         }
-    }
+    },
 })
 function ButtonStyled() {
     const classes = useStyle();
