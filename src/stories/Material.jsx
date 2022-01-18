@@ -4,6 +4,8 @@ import React from "react";
 import { Fragment } from "react";
 import Button from '@material-ui/core/Button'
 import SaveIcon from '@material-ui/icons/Save';
+import cera from './assets/font/CeraPro-Regular.woff';
+
 /**
  * If you want to apply custom style 
  * <Button 
@@ -17,8 +19,19 @@ import SaveIcon from '@material-ui/icons/Save';
         </Button>
  */
 import { makeStyles } from "@material-ui/core";
-import { ThemeProvider, createTheme } from "@material-ui/core/styles";
-import { orange } from "@material-ui/core/colors";
+import {ThemeProvider,createTheme } from "@material-ui/core/styles";
+
+const ceraPro = {
+    fontFamily: 'cerapro',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+    local('cerapro'),
+    local('cerapro-regular),
+    url(${cera}) format('woff')
+    `,
+}
 const useStyle = makeStyles({
     root: {
         background: 'linear-gradient(45deg, #FE6B8B,#FF8E53)',
@@ -39,6 +52,18 @@ const theme = createTheme({
             main: '#C6DAF6'
         }
     },
+    typography: {
+        fontFamily: 'Cera pro, Arial',
+        
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@global' : {
+                '@font-face': [cera],
+            }
+        }
+    }
+    
 })
 function ButtonStyled() {
     const classes = useStyle();
